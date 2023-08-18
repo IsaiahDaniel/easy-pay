@@ -18,6 +18,7 @@ import BGPattern2 from "../../assets/Patterns.png";
 import HappyCustomer from "../../assets/happy-customer.png";
 import Input from "../../components/UI/Input/Input";
 import Footer from "../../components/shared/Footer/Footer";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -43,12 +44,12 @@ const Home = (props: Props) => {
             need
           </p>
 
-          <div>
+          <Link to="/dashboard">
             <Button
               text="Start Using Free, Forever"
               classNames="rounded-full mt-4 px-10 py-5"
             />
-          </div>
+          </Link>
 
           <div className="flex mt-10">
             <button className="px-2 py-3 bg-white rounded-md text-black shadow-xl flex items-center mr-3">
