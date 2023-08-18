@@ -9,6 +9,7 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { BsCalendarDate, BsFilter } from "react-icons/bs";
 import ActivityAvatar from "../../assets/avatar-activity.jpeg";
 import Button from "../../components/UI/Button/Button";
+// import LineChart from "../../components/shared/Charts/LineChart";
 
 type Props = {};
 
@@ -109,6 +110,8 @@ const Dashboard = (props: Props) => {
                 <AiOutlineCaretDown />
               </div>
             </div>
+
+            {/* <LineChart /> */}
           </Card>
         </section>
         <section className="mt-10">

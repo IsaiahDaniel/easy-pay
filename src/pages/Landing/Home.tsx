@@ -22,6 +22,8 @@ import Footer from "../../components/shared/Footer/Footer";
 type Props = {};
 
 const Home = (props: Props) => {
+  const [selectedTab, setSelectedTab] = useState<number>(0);
+
   return (
     <>
       <Navbar />
@@ -238,31 +240,89 @@ const Home = (props: Props) => {
         <div className="wrapper">
           <div className="flex items-center justify-between gap-6">
             <div className="flex-1">
-              <h2 className="text-6xl">Get an Exclusive <br />  Demo of Eazipay</h2>
+              <h2 className="text-6xl">
+                Get an Exclusive <br /> Demo of Eazipay
+              </h2>
               <p className="mt-5">
-                Our greatest priority is to put you <br /> and your business first. Let’s
-                show you how we can help.
+                Our greatest priority is to put you <br /> and your business
+                first. Let’s show you how we can help.
               </p>
             </div>
 
             <Card classNames="px-5 py-10 flex-1">
-                <div className="text-center px-16">
-                  <h2 className="text-3xl">First things first</h2>
-                  <p>We want to serve you better. Tell us a bit about yourself or company</p>
+              <div className="text-center px-16">
+                <h2 className="text-3xl">First things first</h2>
+                <p>
+                  We want to serve you better. Tell us a bit about yourself or
+                  company
+                </p>
+              </div>
+
+              <div className="rounded-lg border py-3 my-2">
+                <div className="flex items-center px-5 gap-4">
+                  <button
+                    className="bg-black py-2 rounded-md text-white flex-1"
+                    onClick={() => setSelectedTab(0)}
+                  >
+                    Individual
+                  </button>
+                  <button
+                    className="bg-[#f2f1f1] rounded-md py-2 flex-1"
+                    onClick={() => setSelectedTab(1)}
+                  >
+                    Company
+                  </button>
                 </div>
+              </div>
 
-                <form action="" className="space-y-5">
-                  <Input placeholder="First name" />
-                  <Input placeholder="First name" />
-                  <Input placeholder="First name" />
-                  <Input placeholder="First name" />
-                  <Input placeholder="First name" />
-                  <Input placeholder="First name" />
+              <>
+                {selectedTab == 0 && (
+                  <form action="" className="space-y-5">
+                    <Input placeholder="First name" />
+                    <Input placeholder="Last name" />
+                    <Input placeholder="Email" />
 
-                  <div className="w-full">
-                    <Button text="Request Demo" classNames="bg-black text-white w-full rounded-3xl" />
-                  </div>
-                </form>
+                    <div className="w-full">
+                      <Button
+                        text="Request Demo"
+                        classNames="bg-black text-white w-full rounded-3xl"
+                      />
+                    </div>
+                  </form>
+                )}
+              </>
+
+              <>
+                {selectedTab == 1 && (
+                  <form action="" className="space-y-5">
+                    <Input placeholder="First name" />
+                    <Input placeholder="Last name" />
+                    <Input placeholder="Email" />
+                    <Input placeholder="Job Title" />
+                    <Input placeholder="Compay Size" />
+
+                    <div className="w-full">
+                      <Button
+                        text="Request Demo"
+                        classNames="bg-black text-white w-full rounded-3xl"
+                      />
+                    </div>
+                  </form>
+                )}
+              </>
+
+              {/* <form action="" className="space-y-5">
+                <Input placeholder="First name" />
+                <Input placeholder="Last name" />
+                <Input placeholder="Email" />
+
+                <div className="w-full">
+                  <Button
+                    text="Request Demo"
+                    classNames="bg-black text-white w-full rounded-3xl"
+                  />
+                </div>
+              </form> */}
             </Card>
           </div>
         </div>
